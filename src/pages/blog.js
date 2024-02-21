@@ -1,20 +1,31 @@
-// Step 1: Import React
-import * as React from 'react'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
-import { StaticImage } from 'gatsby-plugin-image'
+import * as React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
 
-// Step 2: Define your component
-const BlogPage = () => {
+const BlogPage = ({ data }) => {
   return (
-
-    <Layout pageTitle="my blog post">    
-      <p>My cool post wil go in here</p>
+    <Layout pageTitle="My Blog Posts">
+      <p>My cool posts will go in here</p>
+      <ul>
+        {data.allFile.nodes.map((node) => (
+          <li key={node.name}>{node.name}</li>
+        ))}
+      </ul>
     </Layout>
-  )
-}
+  );
+};
 
-// You'll learn about this in the next task, just copy it for now
-export const Head = () => <Seo title="blog page" />
-// Step 3: Export your component
-export default BlogPage
+export const query = graphql`
+  query {
+    allFile(filter: { sourceInstanceName: { eq: "blog" } }) {
+      nodes {
+        name
+      }
+    }
+  }
+`;
+
+export const Head = () => <Seo title="My Blog Posts" />;
+
+export default BlogPage;
