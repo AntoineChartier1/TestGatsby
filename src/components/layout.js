@@ -23,6 +23,8 @@ const Layout = ({ pageTitle, children }) => {
   }
 `)
 
+  // je sauve netlify
+
   return (
     <div className={container} >
       <header className={siteTitle}>{data.site.siteMetadata.title}</header>
