@@ -11,11 +11,14 @@ const IndexPage = () => {
     <Layout pageTitle="home page">
       
       <p>I'm making this by following the Gatsby Tutorial.</p>
+      <p>I'm making this by following the Gatsby Tutorial.</p>
       <StaticImage src="https://petkeen.com/wp-content/uploads/2021/05/grey-american-shorthair-cat_Cat-Box_Shutterstock.jpg" alt="A cat" />
       <StaticImage src="../images/chat.jpg" alt="A cat" />
     </Layout>
   )
 }
+
+
 
 // You'll learn about this in the next task, just copy it for now
 export const Head = () => <Seo title="Home page" />

@@ -23,7 +23,6 @@ const Layout = ({ pageTitle, children }) => {
   }
 `)
 
-  // je sauve netlify
 
   return (
     <div className={container} >
